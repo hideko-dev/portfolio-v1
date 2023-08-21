@@ -1,0 +1,22 @@
+:root {
+    background: var(--bg-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.8235294118);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #464646;
+    border-radius: 50px;
+}
