@@ -1,8 +1,21 @@
+<script>
+    import { onMount } from 'svelte';
+    let opacity = 0;
+    onMount(() => {
+        const interval = setInterval(() => {
+            opacity += 0.03;
+            if (opacity > 1) {
+                clearInterval(interval);
+            }
+        }, 5);
+    });
+</script>
+
 <svelte:head>
     <title>404 Not Found - Hideko's Portfolio</title>
 </svelte:head>
 
-<div class="error">
+<div class="error" style="opacity: {opacity}">
     <div class="center">
         <p class="none">404</p>
         <div class="line"/>
@@ -29,7 +42,7 @@
         align-items: center;
     }
     .error .center .none {
-        color: mediumspringgreen;
+        color: var(--main-color);
         font-family: Inter;
         font-size: 55px;
     }

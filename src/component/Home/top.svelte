@@ -4,7 +4,7 @@
     let opacity = 0;
     onMount(() => {
         const interval = setInterval(() => {
-            opacity += 0.01;
+            opacity += 0.03;
             if (opacity > 1) {
                 clearInterval(interval);
             }
@@ -26,6 +26,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: all 0.2s;
+        position: relative;
+    }
+    .top .toptitle .mouseanim {
+        position: absolute;
+        left: 49%;
+        top: 75%;
     }
     .top .toptitle .title {
         font-family: Inter;
@@ -43,14 +50,11 @@
         text-align: center;
         font-size: 20px;
         color: var(--text-softcolor);
+        transition: all 0.2s;
     }
     .top .toptitle .bio .bio-student,.bio-gay {
         color: var(--text-color);
-    }
-    .top .toptitle .mouseanim {
-        position: absolute;
-        left: 49%;
-        top: 80%;
+        transition: all 0.2s;
     }
 
     @media screen and (max-width: 1000px) {

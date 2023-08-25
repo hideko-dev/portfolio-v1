@@ -1,30 +1,52 @@
 <script>
-    let menu = false;
-    function openMenu() {
-        if(menu){
-            menu = false;
-        } else if(!menu){
-            menu = true;
+    let status = false;
+    let l1_def = "translate(0%,200%) rotate(-45deg)";
+    let l2_def = "translate(0%,-130%) rotate(45deg)";
+    let l1 = "";
+    let l2 = "";
+    function handleClick() {
+        if(status === false){
+            status = true
+            l1 = l1_def;
+            l2 = l2_def;
+        } else if(status === true){
+            status = false
+            l1 = "";
+            l2 = "";
         }
-        console.log(menu);
     }
 </script>
 
-<div class="menubtn" on:click={openMenu}>
-    {#if !menu}
-    <i class="fa-solid fa-bars"></i>
-    {:else}
-    <i class="fa-solid fa-xmark"></i>
-    {/if}
+<div class="menubtn" on:click={handleClick}>
+    <div class="line l1" style="transform: {l1}"/>
+    <div class="line l2" style="transform: {l2}"/>
 </div>
-
 
 <style>
     .menubtn {
-        margin-bottom: 18px;
-        width: 30px;
-        height: 25px;
+        width: 40px;
+        height: 38px;
         transition: all 0.2s;
+        background: var(--themeswitcher-bg-color);
+        border-radius: 5px;
+        position: relative;
+    }
+    .line {
+        background: var(--themeswitcher-icon-color);
+        width: 25px;
+        height: 3px;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+    .l1 {
+        position: absolute;
+        top: 12px;
+        left: 8px;
+    }
+    .l2 {
+        position: absolute;
+        top: 22px;
+        left: 8px;
     }
     .menubtn i {
         display: flex;

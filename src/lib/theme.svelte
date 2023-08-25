@@ -1,7 +1,11 @@
 <script>
+
     let theme = localStorage.getItem('theme');
     let isBtnMoved = false;
     let btnPosition = 0;
+    if(theme === null) {
+        theme = "dark";
+    }
     if(theme === "light") {
         isBtnMoved = true;
     }
@@ -11,23 +15,29 @@
         theme = theme === 'light' ? 'dark' : 'light';
         localStorage.setItem('theme', theme);
     }
+
 </script>
 
 <svelte:head>
+    <style>
+        :root {
+            --main-color: #ff9900;
+        }
+    </style>
     {#if theme === "dark"}
         <style>
 
             :root {
-
-                --main-color: #ff9900;
                 --main-color-bg: linear-gradient(to top left, #ff9900, #fa1500);
 
+                --theme-num: 0%;
+
                 --bg-color: black;
-                --bg-softcolor: #2d2d2d;
-                --text-color: white;
+                --bg-softcolor: #2a2a2a;
+                --text-color: #E4E5E6;
                 --text-softcolor: #ffffff;
 
-                --themeswitcher-bg-color: #343434;
+                --themeswitcher-bg-color: #464646;
                 --themeswitcher-btn-color: #6b6b6b;
                 --themeswitcher-icon-color: white;
             }
@@ -37,9 +47,12 @@
         <style>
 
             :root {
+
+                --theme-num: 100%;
+
                 --bg-color: white;
-                --bg-softcolor: #969696;
-                --text-color: black;
+                --bg-softcolor: #e5e5e5;
+                --text-color: #2a2a2a;
                 --text-softcolor: #4f4f4f;
 
                 --themeswitcher-bg-color: #c7c7c7;

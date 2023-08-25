@@ -11,7 +11,7 @@
                     clearInterval(interval);
                 }
             }, 5);
-        }, 250);
+        }, 50);
     });
 
     let results = [];
@@ -40,9 +40,11 @@
 
 <div class="workslist" style="opacity: {opacity};">
     {#each results as res}
-            <div class="container" data-text={res.description} style="background: linear-gradient({res.bg}">
+            <div class="container" data-text={res.description}>
+                <div class="titleimage" style="background: {res.bg}"/>
                 <div class="info">
                     <p class="title">{res.title}</p>
+                    <p class="desc">{res.description}</p>
                     <div class="btn" on:click={openDetail(res.title, res.description)}>
                         <p>Detail</p>
                         <i class="fa-solid fa-arrow-right"></i>
@@ -56,12 +58,12 @@
 <style>
     .workslist {
         margin: 5rem auto;
-        width: 650px;
+        width: 800px;
         background: var(--bg-color);
         transition: all 0.2s;
         display: grid;
         gap: 1.5rem 1.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
     .btn {
         background: #333333;
@@ -76,6 +78,9 @@
         transition: all 0.2s;
         z-index: 1;
         user-select: none;
+
+        display: none;
+
     }
     .btn:hover {
         opacity: 0.8;
@@ -97,28 +102,48 @@
     }
 
     .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        height: 150px;
-        background: var(--themeswitcher-bg-color);
+        display: block;
+        width: 250px;
+        height: 260px;
+        background: var(--bg-softcolor);
         border-radius: 10px;
         transition: all 0.2s;
         position: relative;
         transition: all 0.2s;
     }
     .container:hover {
-        transform: translateY(-8px);
+        transform: translateY(-7px);
         cursor: pointer;
+    }
+    .titleimage {
+        width: 250px;
+        height: 150px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
     .info {
         position: absolute;
-        color: white;
-        width: 150px;
+        color: var(--text-softcolor);
+        width: 250px;
+        height: 100px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
     .info .title {
         font-family: Inter;
-        font-size: 20px;
+        font-size: 22px;
+        margin: 20px;
+    }
+    .info .desc {
+        font-family: Roboto;
+        color: var(--text-softcolor);
+        opacity: 0.5;
+        font-size: 15px;
+        width: 210px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: -11px auto;
+
     }
 </style>

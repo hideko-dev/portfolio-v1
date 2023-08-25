@@ -1,12 +1,13 @@
 <script>
     import {Link} from "svelte-routing";
+    import Icon from "../../parts/icon.svelte";
     let year = new Date().getFullYear();
 </script>
 
 <div class="footer">
     <div class="topicon">
         <div class="line"/>
-        <i class="fa-solid fa-play"></i>
+        <div class="icon"><Icon/></div>
     </div>
     <div class="buttom">
         <div class="left">
@@ -42,7 +43,7 @@
         width: 1000px;
         transition: all 0.2s;
     }
-    .topicon i {
+    .topicon .icon {
         background: var(--bg-color);
         color: var(--text-color);
         width: 80px;
