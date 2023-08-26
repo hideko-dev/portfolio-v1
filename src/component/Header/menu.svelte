@@ -39,6 +39,9 @@
     <div class="links">
         <Links/>
     </div>
+    <div class="theme">
+        <ThemeSwitcher/>
+    </div>
 </div>
 
 <style>
@@ -52,6 +55,11 @@
         background: var(--bg-softcolor);
         border-right: 1px solid var(--text-color);
         transition: all 0.5s ease;
+    }
+    .theme {
+        width: 50px;
+        height: 25px;
+        margin: 2rem auto;
     }
     .border {
         background: #424242;

@@ -1,4 +1,5 @@
 import {writable} from "svelte/store";
+import {onMount} from "svelte";
 
 export const navlist = writable([
     {to: "works", title: "Works"},
@@ -7,4 +8,12 @@ export const navlist = writable([
 
 ]);
 
+
 export const isMenuOpen = writable(false);
+
+const mediaQuery = window.matchMedia('(min-width: 500px)');
+mediaQuery.addListener(updateTheme);
+
+function updateTheme(event) {
+    isMenuOpen.set(!event.matches);
+}
