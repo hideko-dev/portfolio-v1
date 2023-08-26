@@ -3,6 +3,7 @@
     import Icon from "../../parts/icon.svelte";
     import ToggleTheme from "../../lib/theme.svelte";
     import Humberger from "./humberger.svelte";
+    import Links from "../../parts/links.svelte";
     import { navlist } from "../../store.js";
     let list = $navlist;
 </script>
@@ -25,6 +26,7 @@
     </div>
 
     <div class="links">
+        <Links/>
     </div>
 
     <div class="menubutton">

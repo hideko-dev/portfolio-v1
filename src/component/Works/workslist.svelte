@@ -146,4 +146,18 @@
         margin: -11px auto;
 
     }
+
+    @media screen and (max-width: 1000px) {
+        .workslist {
+            width: 600px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .workslist {
+            width: 260px;
+            gap: 2.5rem 1.5rem;
+        }
+    }
+
 </style>
