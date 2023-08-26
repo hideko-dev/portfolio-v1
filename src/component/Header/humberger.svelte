@@ -1,4 +1,7 @@
 <script>
+
+    import { isMenuOpen } from "../../store.js";
+
     let status = false;
     let l1_def = "translate(0%,200%) rotate(-45deg)";
     let l2_def = "translate(0%,-130%) rotate(45deg)";
@@ -9,10 +12,12 @@
             status = true
             l1 = l1_def;
             l2 = l2_def;
+            isMenuOpen.set(true);
         } else if(status === true){
             status = false
             l1 = "";
             l2 = "";
+            isMenuOpen.set(false);
         }
     }
 </script>
@@ -30,6 +35,10 @@
         background: var(--themeswitcher-bg-color);
         border-radius: 5px;
         position: relative;
+    }
+    .menubtn:hover {
+        opacity: 0.7;
+        cursor: pointer;
     }
     .line {
         background: var(--themeswitcher-icon-color);

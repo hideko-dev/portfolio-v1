@@ -3,8 +3,8 @@
     import Icon from "../../parts/icon.svelte";
     import ToggleTheme from "../../lib/theme.svelte";
     import Humberger from "./humberger.svelte";
-    import Links from "../../parts/links.svelte";
-    import NavList from "../../parts/navlist.svelte";
+    import { navlist } from "../../store.js";
+    let list = $navlist;
 </script>
 
 <div class="header">
@@ -12,17 +12,19 @@
     <Link to="/" style="text-decoration: none">
         <div class="logo">
             <div class="icon"><Icon/></div>
+
             <div class="line"></div>
             <p>Hideko</p>
         </div>
     </Link>
 
     <div class="nav">
-        <NavList/>
+        {#each list as lists}
+            <Link to="{lists.to}" style="text-decoration: none"><p class="href">{lists.title}</p></Link>
+        {/each}
     </div>
 
     <div class="links">
-        <Links/>
     </div>
 
     <div class="menubutton">
@@ -73,8 +75,27 @@
         opacity: 60%;
     }
     .nav {
+        justify-content: center;
+        align-items: center;
         margin-left: 5rem;
         display: flex;
+    }
+    .nav .href {
+        color: var(--text-color);
+        transition: all 0.2s;
+        margin-inline: 5px;
+        padding: 7px;
+        padding-inline: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin-inline: 10px;
+        font-family: Roboto;
+    }
+    .nav .href:hover {
+        background: #2d2d2d;
+        color: white;
     }
     .links {
         margin-left: 5rem;
