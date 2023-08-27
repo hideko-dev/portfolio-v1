@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<img src="../../public/logo.webp" alt="" style="filter: invert(var(--theme-num));">
+<img src="https://cdn.jsdelivr.net/gh/Hideko-Dev/hideko-portfolio/public/logo.webp" alt="" style="filter: invert(var(--theme-num));">
 
 
 <style>
