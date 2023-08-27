@@ -1,5 +1,5 @@
 <script>
-    import Mouse from "./mouse.svelte";
+    import Mouse from "./mouse_anim.svelte";
     import { onMount } from 'svelte';
     let opacity = 0;
     onMount(() => {
@@ -12,7 +12,7 @@
     });
 </script>
 
-<div class="top" style="opacity: {opacity}">
+<div class="top" style="opacity: {opacity};">
     <div class="toptitle">
         <p class="title">Hi. I'm Hideko <i class="fa-solid fa-fire"></i></p>
         <p class="bio">I am a <span class="bio-student">student</span> developer. Also, I'm <span class="bio-gay">gay</span>.</p>
@@ -26,7 +26,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: all 0.2s;
+        transition: all 0.7s;
         position: relative;
     }
     .top .toptitle .mouseanim {

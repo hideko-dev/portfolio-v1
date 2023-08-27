@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<img src="../../public/download.webp" alt="" style="filter: invert(var(--theme-num));">
+<img src="../../public/logo.webp" alt="" style="filter: invert(var(--theme-num));">
 
 
 <style>

@@ -31,7 +31,7 @@
 <div class="myabout">
 
     <div class="titlecontent">
-        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-user"/>
         <p>about me</p>
     </div>
 
@@ -86,7 +86,7 @@
         height: 200px;
         padding: 1rem;
         border-radius: 10px;
-        margin: 2rem auto;
+        margin: 1.5rem auto;
         position: relative;
     }
     .changedlang {
@@ -118,18 +118,19 @@
         color: var(--text-softcolor);
         width: 115px;
         height: 30px;
-        border-radius: 10px;
+        border-radius: 100px;
         display: flex;
         align-items: center;
         transition: all 0.2s;
         user-select: none;
     }
     .abouttext .langsetting .btn i {
-        margin-left: 10px;
+        margin-left: 11px;
+        font-size: 14px;
     }
     .abouttext .langsetting .btn p {
         margin-left: 5px;
-        font-size: 15px;
+        font-size: 14px;
         font-family: Roboto;
     }
     .abouttext .langsetting .btn:hover {

@@ -1,6 +1,7 @@
 <script>
     import Top from "./top.svelte";
-    import MyAbout from "./myabout.svelte";
+    import About from "./about.svelte";
+    import Experience from "./experience.svelte";
 </script>
 
 
@@ -10,7 +11,8 @@
 
 <div class="home">
     <Top/>
-    <MyAbout/>
+    <About/>
+    <Experience/>
 </div>
 
 <style>

@@ -11,9 +11,16 @@ export const navlist = writable([
 
 export const isMenuOpen = writable(false);
 
-const mediaQuery = window.matchMedia('(min-width: 500px)');
+// const mediaQuery = window.matchMedia('(min-width: 700px)');
+// mediaQuery.addListener(updateMenuBoolean);
+//
+// function updateMenuBoolean(event) {
+//     isMenuOpen.set(!event.matches);
+// }
+
+let mediaQuery = window.matchMedia('(min-width: 500px)');
 mediaQuery.addListener(updateTheme);
 
-function updateTheme(event) {
-    isMenuOpen.set(!event.matches);
+function updateTheme() {
+    isMenuOpen.set(false);
 }

@@ -78,9 +78,7 @@
         transition: all 0.2s;
         z-index: 1;
         user-select: none;
-
         display: none;
-
     }
     .btn:hover {
         opacity: 0.8;

@@ -2,6 +2,8 @@
     import {Link} from "svelte-routing";
     import Icon from "../../parts/icon.svelte";
     let year = new Date().getFullYear();
+    import { navlist } from "../../store.js";
+    let list = $navlist;
 </script>
 
 <div class="footer">
@@ -18,9 +20,9 @@
             </div>
         </div>
         <div class="right">
-            <Link to="works" style="text-decoration: none"><p class="href">Works</p></Link>
-            <Link to="cats" style="text-decoration: none"><p class="href">Cats</p></Link>
-            <Link to="posts" style="text-decoration: none"><p class="href">Posts</p></Link>
+            {#each list as lists}
+                <Link to="{lists.to}" style="text-decoration: none"><p class="href">{lists.title}</p></Link>
+            {/each}
         </div>
     </div>
 </div>
