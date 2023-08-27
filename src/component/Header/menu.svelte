@@ -22,15 +22,8 @@
     }
 </script>
 <!--opacity: {barOpacity}; width: {barWidth}rem; pointer-events: {barPointer};-->
-<div class="sidebar" style="left: {barWidth}%;">
-    <div class="logo">
-        <div class="icon"><Icon/></div>
-        <div class="line"></div>
-        <p>Hideko</p>
-    </div>
-    <div class="border"/>
+<div class="sidebar" style="top: {barWidth}%;">
     <div class="list">
-        <div class="listborder"/>
         <Link to="/" style="text-decoration: none"><p class="href">Home</p></Link>
         {#each list as lists}
             <Link to="{lists.to}" style="text-decoration: none"><p class="href">{lists.title}</p></Link>
@@ -47,64 +40,24 @@
         top: 0;
         left: 0;
         height: 100vh;
-        z-index: 1000;
+        width: 100vw;
+        z-index: 998;
         color: var(--text-color);
-        background: var(--bg-softcolor);
-        border-right: 1px solid var(--text-color);
+        background: rgba(var(--bg-softcolor-rgb), 0.6);
+        backdrop-filter: blur(15px);
         transition: all 0.5s ease;
-    }
-    .border {
-        background: #424242;
-        width: 16rem;
-        height: 3px;
-        border-radius: 10px;
-        margin-top: 1.5rem;
-    }
-    .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 1.5rem;
-        font-size: 28px;
-        font-family: Inter;
-        transition: all 0.2s;
-        color: var(--text-color);
-    }
-    .logo .icon {
-        margin-top: 6px;
-    }
-    .logo .line {
-        background: #424242;
-        width: 3px;
-        height: 25px;
-        border-radius: 10px;
-        transform: rotateZ(20deg);
-        margin-inline: 15px;
-    }
-    .logo:hover {
-        cursor: pointer;
-        opacity: 60%;
     }
     .links {
         margin-top: 3rem;
     }
     .list {
-        margin: 3rem auto;
+        margin: 15rem auto;
         width: 100px;
         font-family: Inter;
         position: relative;
     }
-    .listborder {
-        position: absolute;
-        left: -1.3rem;
-        top: 0;
-        width: 3px;
-        height: 13rem;
-        border-radius: 10px;
-        background: var(--text-softcolor);
-    }
     .list p {
-        margin-block: 20px;
+        margin-block: 30px;
         font-size: 30px;
         position: relative;
         color: var(--text-softcolor);

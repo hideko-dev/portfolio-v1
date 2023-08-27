@@ -48,9 +48,10 @@
     .topicon .icon {
         background: var(--bg-color);
         color: var(--text-color);
-        width: 80px;
+        width: 90px;
         text-align: center;
         transition: all 0.2s;
+        scale: 0.6;
     }
     .buttom {
         text-align: center;

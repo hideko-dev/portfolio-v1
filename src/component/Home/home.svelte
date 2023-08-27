@@ -2,6 +2,7 @@
     import Top from "./top.svelte";
     import About from "./about.svelte";
     import Experience from "./experience.svelte";
+    import Specializations from "./specializations.svelte";
 </script>
 
 
@@ -13,6 +14,7 @@
     <Top/>
     <About/>
     <Experience/>
+    <Specializations/>
 </div>
 
 <style>

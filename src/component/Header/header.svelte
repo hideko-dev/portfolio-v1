@@ -8,61 +8,72 @@
     let list = $navlist;
 </script>
 
-<div class="header">
+<div class="head">
+    <div class="header">
 
-    <Link to="/" style="text-decoration: none">
-        <div class="logo">
-            <div class="icon"><Icon/></div>
+        <Link to="/" style="text-decoration: none">
+            <div class="logo">
+                <div class="icon"><Icon/></div>
 
-            <div class="line"></div>
-            <p>Hideko</p>
+                <div class="line"></div>
+                <p>Hideko</p>
+            </div>
+        </Link>
+
+        <div class="nav">
+            {#each list as lists}
+                <Link to="{lists.to}" style="text-decoration: none"><p class="href">{lists.title}</p></Link>
+            {/each}
         </div>
-    </Link>
 
-    <div class="nav">
-        {#each list as lists}
-            <Link to="{lists.to}" style="text-decoration: none"><p class="href">{lists.title}</p></Link>
-        {/each}
+        <div class="links">
+            <Links/>
+        </div>
+
+        <div class="menubutton">
+            <Humberger/>
+        </div>
+
+        <div class="themeswitchbtn">
+            <ToggleTheme/>
+        </div>
+
     </div>
-
-    <div class="links">
-        <Links/>
-    </div>
-
-    <div class="menubutton">
-        <Humberger/>
-    </div>
-
-    <div class="themeswitchbtn">
-        <ToggleTheme/>
-    </div>
-
 </div>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+    .head {
+        display: flex;
+        justify-content: center;
+    }
     .header {
+        background: rgba(var(--bg-softcolor-rgb), 0.8);
         backdrop-filter: blur(15px);
         display: flex;
         justify-content: center;
         align-items: center;
         height: 4rem;
-        width: 100%;
+        width: 62rem;
         position: fixed;
         z-index: 999;
+
+        margin: 1.5rem;
+        border-radius: 100px;
     }
     .logo {
         display: flex;
         align-items: center;
-        font-size: 28px;
+        font-size: 25px;
         font-family: Inter;
         transition: all 0.2s;
         color: var(--text-color);
     }
     .logo .icon {
-        margin-top: 6px;
+        margin-top: 5px;
+        scale: 0.8;
     }
     .logo .line {
         background: #424242;
@@ -70,7 +81,7 @@
         height: 25px;
         border-radius: 10px;
         transform: rotateZ(20deg);
-        margin-inline: 15px;
+        margin-inline: 12px;
     }
     .logo:hover {
         cursor: pointer;
@@ -86,8 +97,8 @@
         color: var(--text-color);
         transition: all 0.2s;
         margin-inline: 5px;
-        padding: 7px;
-        padding-inline: 18px;
+        padding: 6px;
+        padding-inline: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -96,27 +107,35 @@
         font-family: Roboto;
     }
     .nav .href:hover {
-        background: #2d2d2d;
-        color: white;
+        background: var(--text-color);
+        /*#2d2d2d*/
+        color: var(--bg-color);
     }
     .links {
         margin-left: 5rem;
     }
     .themeswitchbtn {
         margin-left: 5rem;
+        margin-top: 6px;
     }
 
     .menubutton {
         display: none;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1050px) {
+        .header {
+            width: 46rem;
+        }
         .links {
             display: none;
         }
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 790px) {
+        .header {
+            width: 27rem;
+        }
         .nav {
             display: none;
         }
@@ -132,12 +151,18 @@
     }
 
     @media screen and (max-width: 500px) {
+        .header {
+            width: 22rem;
+        }
         .logo {
             margin-right: 5rem;
         }
     }
 
     @media screen and (max-width: 380px) {
+        .header {
+            width: 20rem;
+        }
         .logo {
             margin-right: 3rem;
         }

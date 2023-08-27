@@ -21,7 +21,8 @@
 <svelte:head>
     <style>
         :root {
-            --main-color: #ff9900;
+            --main-color: #3aff90;
+            /*#ff9900*/
         }
     </style>
     {#if theme === "dark"}
@@ -34,6 +35,7 @@
 
                 --bg-color: black;
                 --bg-softcolor: #2a2a2a;
+                --bg-softcolor-rgb: 42, 42, 42;
                 --text-color: #E4E5E6;
                 --text-softcolor: #ffffff;
 
@@ -52,6 +54,7 @@
 
                 --bg-color: white;
                 --bg-softcolor: #e5e5e5;
+                --bg-softcolor-rgb: 229, 229, 229;
                 --text-color: #2a2a2a;
                 --text-softcolor: #4f4f4f;
 

@@ -70,7 +70,7 @@
     .present {
         border: 1px solid var(--bg-softcolor);
         width: 400px;
-        height: 570px;
+        height: 562px;
         padding: 1.5rem;
         border-radius: 10px;
         margin: 1.5rem auto;
@@ -136,6 +136,28 @@
     }
     .yearcard .context:before {
         content: "・";
+    }
+
+    @media (max-width: 480px) {
+        .present {
+            width: 330px;
+            height: 645px;
+        }
+        .sideline {
+            height: 595px;
+        }
+        .yearcard {
+            width: 255px;
+        }
+        .dot1 {
+            top: 7rem;
+        }
+        .dot2 {
+            top: 19rem;
+        }
+        .dot3 {
+            top: 32.5rem;
+        }
     }
 
 </style>

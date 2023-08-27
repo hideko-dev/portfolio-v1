@@ -53,7 +53,7 @@
 <style>
     .myabout {
         width: 100vw;
-        height: 50vh;
+        height: 45vh;
         margin: auto;
     }
     .titlecontent {
