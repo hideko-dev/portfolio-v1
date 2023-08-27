@@ -139,6 +139,9 @@
     }
 
     @media (max-width: 480px) {
+        .experience {
+            height: 95vh;
+        }
         .present {
             width: 330px;
             height: 645px;
