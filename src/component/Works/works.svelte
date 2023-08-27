@@ -14,7 +14,6 @@
 
 <style>
     .works {
-        height: 150vh;
         color: var(--text-color);
     }
 </style>
